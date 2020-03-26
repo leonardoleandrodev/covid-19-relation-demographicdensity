@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 #arquivo csv baixado em https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv
-df = pd.read_csv("time_series_19-covid-Confirmed.csv")
+df = pd.read_csv("time_series_covid19_confirmed_global.csv")
 #ordena os paises
 res = df.sort_values(by="Country/Region")
 #remove as colunas desnecessarias
