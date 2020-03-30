@@ -2,7 +2,11 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import os
+import requests as rq
 #arquivo csv baixado em https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv
+txt = rq.get("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv").text
+f = open(os.path.dirname(__file__) + "/time_series_covid19_confirmed_global.csv",'w').write(txt)
+
 df = pd.read_csv(os.path.dirname(__file__) + "/time_series_covid19_confirmed_global.csv")
 #ordena os paises
 res = df.sort_values(by="Country/Region")
